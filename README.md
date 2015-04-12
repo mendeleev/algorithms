@@ -1,11 +1,10 @@
 # Algorithms
 
  1. Matcher.js
-	 ..* match.object(a,b)
-	 ..* match.array(a,b)
+	 ..* match.object(a,b).
+	 ..* match.array(a,b).
 
-## Matcher.js (Methods) 
-----------
+## Matcher.js (Methods)
 
 ### match.array(a,b)
 Matching two arrays. Returns true is the first array has the same values as the second array. The ordering is doesn't metter.
@@ -28,6 +27,3 @@ Matching names and values of two objects and return true if matched of false els
     console.log(match.object({a:1, b:[1,2,3], c:6}, {b:[3,1,2], a:2}));
     // => false
 ```
-
-
-> Written with [StackEdit](https://stackedit.io/).
