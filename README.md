@@ -3,6 +3,8 @@
  1. Matcher.js
   * [match.object(a,b)](#user-content-matchobjectab)
   * [match.array(a,b)](#user-content-matcharrayab)
+ 2. Pagination.js
+  * [pagination.render(results)](#user-content-paginationrenderresults)
 
 ## Matcher.js (Methods)
 
@@ -26,4 +28,14 @@ console.log(match.object({a:1, b:[1,2,3]}, {b:[3,1,2], a:1}));
 // => true
 console.log(match.object({a:1, b:[1,2,3], c:6}, {b:[3,1,2], a:2}));
 // => false
+```
+
+## pagination.js
+
+### pagination.render(results)
+rendering a pagination a pagination
+
+```javascript
+pagination.render(135)
+// => 1 2 3 4 5 6 7 ... 14
 ```
