@@ -9,7 +9,7 @@
         pagesContainer: $("#pagination ul"),
         templates: {
             pageWrapper: $('<li></li>'),
-            page: $('<a href="javascript:void(0)"></a>'),
+            page: $('<a href="javascript:void(0)" class="page"></a>'),
             active: $('<span class="active"></span>'),
             dots: $('<span>&#8230;</span>')
         },
@@ -22,6 +22,18 @@
         setActive: function(active) {
             this.active = Number(active) || this.active;
             this.render();
+        },
+        prev: function() {
+            if(this.active > 1) {
+                this.active -= 1;
+                this.render();
+            }
+        },
+        next: function() {
+            if(this.active < this.pages) {
+                this.active += 1;
+                this.render();
+            }
         },
         addPage: function(page) {
             this.templates.page.text(page);
@@ -68,7 +80,13 @@
         },
         events: function() {
             this.pagination.on('click', function(event) {
-                this.setActive($(event.target).text());
+                if($(event.target).hasClass('page')) {
+                    this.setActive($(event.target).text());
+                } else if($(event.target).hasClass('prev')) {
+                    this.prev();
+                } else if($(event.target).hasClass('next')) {
+                    this.next();
+                }
             }.bind(this));
         }
     };

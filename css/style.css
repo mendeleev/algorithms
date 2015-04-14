@@ -2,16 +2,38 @@ body {
     font-family: sans-serif;
 }
 
+ul, li {
+    margin:0; padding: 0;
+}
+
 .hide {
     display: none;
 }
 
 .pagination {
-    margin-top:40px;    
+    top:40px;
+    overflow: hidden;
+    padding:10px;
 }
+
+.prev, .next {
+    padding:5px;
+    margin: 5px 0;
+}
+
+.prev:before {
+    content:"\2190";
+    padding-right: 5px;
+}
+
+.next:after {
+    content:"\2192";
+    padding-left:5px;
+} 
 
 .pagination ul {
     list-style:none;
+    padding: 7px 0;
 }
 
 .pagination li {
